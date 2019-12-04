@@ -58,4 +58,13 @@ class BookService {
         task.resume()
     }
     
+    func getBook(withId: Int) -> Book? {
+        for bk in books {
+            if bk.id == withId {
+                return bk
+            }
+        }
+        return nil
+    }
+    
 }

@@ -10,9 +10,5 @@ import UIKit
 
 class BookInputViewController: UIViewController {
     
-    
-    
-    
-    
-    
+
 }

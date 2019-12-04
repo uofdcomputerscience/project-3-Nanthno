@@ -43,4 +43,8 @@ class ReviewService {
         task.resume()
     }
     
+    func getReviews(bookId: Int) -> [Review] {
+        return reviews.filter { $0.bookId == bookId }
+    }
+    
 }
