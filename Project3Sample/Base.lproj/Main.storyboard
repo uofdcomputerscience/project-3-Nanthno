@@ -440,13 +440,93 @@
                     <view key="view" contentMode="scaleToFill" id="y53-nC-wqA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Enter your review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFb-1D-2V5">
+                                <rect key="frame" x="17" y="298" width="133" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Enter your name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymP-EM-cfJ">
+                                <rect key="frame" x="20" y="115" width="125.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MX3-Qq-ffQ">
+                                <rect key="frame" x="20" y="222" width="374" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Aa1-zN-iKw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0ol-75-Jdk">
+                                <rect key="frame" x="17" y="326" width="367" height="475"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your review title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5a-8j-EvB">
+                                <rect key="frame" x="20" y="202" width="166" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTg-xe-Zsa">
+                                <rect key="frame" x="20" y="143" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeN-N5-4H6">
+                                <rect key="frame" x="277" y="809" width="84" height="30"/>
+                                <state key="normal" title="Post Review"/>
+                                <connections>
+                                    <action selector="postReviewTapped:" destination="S57-sc-chR" eventType="touchUpInside" id="um2-VY-zdE"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please fill out all fields" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYT-56-yKE">
+                                <rect key="frame" x="20" y="809" width="169" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96547655705683288" green="0.027108720249502484" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q5a-8j-EvB" firstAttribute="leading" secondItem="xPO-2K-IKh" secondAttribute="leading" constant="20" id="07S-gX-Jmr"/>
+                            <constraint firstItem="xPO-2K-IKh" firstAttribute="trailing" secondItem="0ol-75-Jdk" secondAttribute="trailing" constant="30" id="30Q-Fr-o7F"/>
+                            <constraint firstItem="xPO-2K-IKh" firstAttribute="bottom" secondItem="zeN-N5-4H6" secondAttribute="bottom" constant="23" id="5Dl-hQ-tBG"/>
+                            <constraint firstItem="zeN-N5-4H6" firstAttribute="top" secondItem="0ol-75-Jdk" secondAttribute="bottom" constant="8" id="5F8-ud-jcZ"/>
+                            <constraint firstItem="MX3-Qq-ffQ" firstAttribute="top" secondItem="Q5a-8j-EvB" secondAttribute="bottom" constant="-0.5" id="6iH-eh-R3g"/>
+                            <constraint firstItem="0ol-75-Jdk" firstAttribute="leading" secondItem="xPO-2K-IKh" secondAttribute="leading" constant="17" id="ATb-Kr-o8W"/>
+                            <constraint firstItem="ymP-EM-cfJ" firstAttribute="top" secondItem="xPO-2K-IKh" secondAttribute="top" constant="71" id="JN1-iv-wky"/>
+                            <constraint firstItem="TTg-xe-Zsa" firstAttribute="top" secondItem="ymP-EM-cfJ" secondAttribute="bottom" constant="7.5" id="JmN-6E-PAd"/>
+                            <constraint firstItem="TTg-xe-Zsa" firstAttribute="leading" secondItem="xPO-2K-IKh" secondAttribute="leading" constant="20" id="WTj-uC-90o"/>
+                            <constraint firstItem="xPO-2K-IKh" firstAttribute="bottom" secondItem="QYT-56-yKE" secondAttribute="bottom" constant="23" id="ZLw-tR-g0y"/>
+                            <constraint firstItem="xPO-2K-IKh" firstAttribute="trailing" secondItem="MX3-Qq-ffQ" secondAttribute="trailing" constant="20" id="bwm-uy-Tsl"/>
+                            <constraint firstItem="Q5a-8j-EvB" firstAttribute="top" secondItem="TTg-xe-Zsa" secondAttribute="bottom" constant="29" id="fSN-hh-62m"/>
+                            <constraint firstItem="QYT-56-yKE" firstAttribute="leading" secondItem="xPO-2K-IKh" secondAttribute="leading" constant="20" id="hEu-wH-lmN"/>
+                            <constraint firstItem="0ol-75-Jdk" firstAttribute="top" secondItem="EFb-1D-2V5" secondAttribute="bottom" constant="7.5" id="iPb-BW-Uqu"/>
+                            <constraint firstItem="xPO-2K-IKh" firstAttribute="trailing" secondItem="zeN-N5-4H6" secondAttribute="trailing" constant="53" id="iWq-6A-ihH"/>
+                            <constraint firstItem="xPO-2K-IKh" firstAttribute="trailing" secondItem="TTg-xe-Zsa" secondAttribute="trailing" constant="20" id="qP8-YE-mK4"/>
+                            <constraint firstItem="EFb-1D-2V5" firstAttribute="top" secondItem="MX3-Qq-ffQ" secondAttribute="bottom" constant="26" id="v9G-9c-QUd"/>
+                            <constraint firstItem="MX3-Qq-ffQ" firstAttribute="leading" secondItem="xPO-2K-IKh" secondAttribute="leading" constant="20" id="zc5-MU-eEV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xPO-2K-IKh"/>
                     </view>
+                    <connections>
+                        <outlet property="bodyField" destination="0ol-75-Jdk" id="VEX-Uw-mFa"/>
+                        <outlet property="fillOutAllFieldsLabel" destination="QYT-56-yKE" id="SWE-Pw-ufy"/>
+                        <outlet property="nameField" destination="TTg-xe-Zsa" id="9QK-Vl-wFc"/>
+                        <outlet property="reviewTitleField" destination="MX3-Qq-ffQ" id="8jU-ic-lhT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPq-uW-cwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="-735"/>
+            <point key="canvasLocation" x="1418.840579710145" y="-735.26785714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Qao-KN-0YV">

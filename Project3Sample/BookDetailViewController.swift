@@ -53,7 +53,9 @@ class BookDetailViewController: UIViewController {
     }
 
     @IBAction func writeReviewTapped(_ sender: Any) {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReviewInputViewController") as! ReviewInputViewController
+        vc.book = book
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
