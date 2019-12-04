@@ -23,9 +23,10 @@ class ReviewInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fillOutAllFieldsLabel.isHidden = true
-        reviewTitleField.text = ""
-        bodyField.text = ""
+        reviewTitleField.layer.borderWidth = 1
+        reviewTitleField.layer.borderColor = UIColor.lightGray.cgColor
+        bodyField.layer.borderWidth = 1
+        bodyField.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     @IBAction func postReviewTapped(_ sender: Any) {

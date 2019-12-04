@@ -58,6 +58,23 @@ class BookService {
         task.resume()
     }
     
+    func image(for urlString: String, completion: @escaping (UIImage?) -> Void) {
+        guard let imageURL = URL(string: urlString) else { completion(nil); return }
+        if bookImages[imageURL] != nil { completion(bookImages[imageURL]); return }
+        let task = URLSession(configuration: .default).dataTask(with: imageURL) { [weak self] (data, response, error) in
+            guard let data = data else { completion(nil); return }
+            if let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self?.bookImages[imageURL] = image
+                    completion(image)
+                }
+            } else {
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
+    
     func getBook(withId: Int) -> Book? {
         for bk in books {
             if bk.id == withId {
