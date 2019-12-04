@@ -36,13 +36,14 @@ class ReviewInputViewController: UIViewController {
             fillOutAllFieldsLabel.isHidden = false
         }
         else {
+            
+            DispatchQueue.main.async {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
             let review = Review(id: nil, bookId: (book?.id)!, date: Date(), reviewer: nameField.text!, title: reviewTitleField.text, body: bodyField.text)
             reviewService.createReview(review: review, completion: {
                 self.reviewService.fetchReviews {
                     //
-                }
-                DispatchQueue.main.async {
-                    self.navigationController?.popToRootViewController(animated: true)
                 }
             })
         }
