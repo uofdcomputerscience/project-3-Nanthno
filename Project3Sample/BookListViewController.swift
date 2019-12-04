@@ -28,6 +28,14 @@ class BookListViewController: UIViewController {
         bookTable.delegate = self
     }
     
+    @IBAction func refreshBookListTapped(_ sender: Any) {
+        bookService.fetchBooks {
+            DispatchQueue.main.async {
+                self.bookTable.reloadData()
+            }
+        }
+    }
+    
     
 }
 
@@ -35,6 +43,7 @@ extension BookListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (bookService.books.count)
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let book = bookService.books[indexPath.item]
         let title = book.title
@@ -47,14 +56,14 @@ extension BookListViewController: UITableViewDataSource {
         
         return cell
     }
-
     
 }
 extension BookListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let book = bookService.books[indexPath.item]
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "BookDetailViewController") as! BookDetailViewController
+        vc.book = book
+        self.navigationController?.pushViewController(vc, animated: true)
     
     }
-
 }

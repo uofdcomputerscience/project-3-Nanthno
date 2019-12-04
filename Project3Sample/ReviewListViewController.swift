@@ -27,7 +27,14 @@ class ReviewListViewController: UIViewController {
         
     }
     
-    
+    @IBAction func refreshReviewsTapped(_ sender: Any) {
+        reviewService.fetchReviews {
+            DispatchQueue.main.async {
+                self.reviewTable.reloadData()
+                print("refresh")
+            }
+        }
+    }
 }
 extension ReviewListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -10,6 +10,7 @@ import UIKit
 
 class ReviewInputViewController: UIViewController {
     
+    var book : Book?
     
     
     

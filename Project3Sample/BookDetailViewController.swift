@@ -51,6 +51,11 @@ class BookDetailViewController: UIViewController {
             })
         }
     }
+
+    @IBAction func writeReviewTapped(_ sender: Any) {
+        
+    }
+    
 }
 
 extension BookDetailViewController: UITableViewDataSource {
@@ -83,5 +88,10 @@ extension BookDetailViewController: UITableViewDataSource {
     
 }
 extension BookDetailViewController: UITableViewDelegate {
-    //
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let review = reviews?[indexPath.item]
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReviewDetailViewController") as! ReviewDetailViewController
+        vc.review = review
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
